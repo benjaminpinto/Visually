@@ -1,4 +1,4 @@
-# Visually Log In Page Tests
+# Visually Login Page Tests
 
 ![Cypress Tests](https://github.com/benjaminpinto/Visually/actions/workflows/main.yml/badge.svg)
 
@@ -25,7 +25,7 @@ Run `npm test` (or `npm t` for the short version) to run the test in headless mo
 
 Or, run `npm run open` to open Cypress in interactive mode.
 
-> **Note:** This project handle sensible data to perform tests (email and password), so I am using a non versioned `cypress.env.json` file to keep these data safe. At the project folder, you will find the file [`cypress.env.example.json`](/cypress.env.example.json), make a copy of it and insert your credentials at Visually. If you pretend to put this project at your own repository, remember to include this data on your environment variables.
+> **Note:** This project handle sensible data to perform tests (email and password), so I am using a non versioned `cypress.env.json` file to keep these data safe. At the project folder, you will find the file [`cypress.env.example.json`](/cypress.env.example.json), make a copy of it (removing '.example') and insert your credentials at Visually. If you pretend to put this project at your own repository, remember to include this data on your environment variables.
 
 > **Important:** This project uses Github actions to implement CI. If you want to clone it and run at your own repository, remember to update project's ID at [`cypress.config.js`](./cypress.config.js) file, and set your CYPRESS_RECORD_KEY at Github secrets.
 
@@ -43,7 +43,7 @@ Or, run `npm run open` to open Cypress in interactive mode.
 | --- | :----------------------------------------------------- | --------------------------------------------------- | ------------------------------------------------------------ | -------------------------------------------------------------------- | :--------: | :------: | :----: | :-: |
 | 01  | Check if cookie policy message is properly shown       | User have not accepted cookies before (new session) | Visit /user/login                                            | A modal window asking to accept the privacy policy should be visible |     ✅     |    🟢    |   -    |  -  |
 | 02  | Check the visibility of main elements                  | The user is at log in page                          | The page loads                                               | Logo, links, buttons and input fields should be visible              |     ✅     |    🟢    |   -    |  -  |
-| 03  | Check 'Forgot password' exhibition                     | The user is at log in page                          | User clicks 'Forgot password' link                           | A modal window should appear, making possible reset it               |     ✅     |    🟢    |   -    |  -  |
+| 03  | Check 'Forgot password' exhibition                     | The user is at log in page                          | User clicks 'Forgot password' link                           | A modal window should appear, making possible to reset it            |     ✅     |    🟢    |   -    |  -  |
 | 04  | Test login without provide credentials (types nothing) | The user is at log in page                          | User clicks 'Log in', but haven't typed an email or password | A message of required fields should be visible                       |     ✅     |    🟢    |   -    |  -  |
 | 05  | Test login providing wrong credentials                 | The user is at log in page                          | User types 'wrong' at username and password fields           | A message of unrecognized username or password should be visible     |     ✅     |    🟢    |   -    |  -  |
 | 06  | Test login providing correct credentials               | The user is at log in page                          | User types correct email and password                        | He should be correctly logged in and redirected to /view             |     ✅     |    🟢    |   -    |  -  |
